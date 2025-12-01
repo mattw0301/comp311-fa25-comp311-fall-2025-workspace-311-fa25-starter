@@ -183,7 +183,18 @@ C 1 0        # addi x0,  x26, 0        ; rs1 = x26 = 1
 C (-20) 0    # slti x27, x4,  -1       ; rs1 = x4
 C 1 0        # addi x0,  x27, 0        ; rs1 = x27 = 1
 
+C 0 0        # addi x1, x0, 10         ; rs1 = x0 = 0, &quot;rs2&quot; = x0
+C 0 0        # addi x2, x0, 20         ; rs1 = x0 = 0, &quot;rs2&quot; = x0
+C 0 0        # addi x3, x0, -5         ; rs1 = x0 = 0, &quot;rs2&quot; = x0
 
+C 10 20      # add x4, x1, x2          ; rs1 = x1 = 10, rs2 = x2 = 20
+C 20 10      # sub x5, x2, x1          ; rs1 = x2 = 20, rs2 = x1 = 10
+C 10 (-5)    # and x6, x1, x3          ; rs1 = x1 = 10, rs2 = x3 = -5
+C 10 20      # or  x7, x1, x2          ; rs1 = x1 = 10, rs2 = x2 = 20
+C (-5) 10    # slt x8, x3, x1          ; rs1 = x3 = -5, rs2 = x1 = 10
+
+C 10 10      # add x9, x1, x1          ; rs1 = x1 = 10, rs2 = x1 = 10
+C 30 0       # addi x9, x4, 1          ; rs1 = x4 = 30, &quot;rs2&quot; = x0 = 0 = 30, rs2 forced x0 = 0
 </dataString>
           </testData>
         </entry>
@@ -213,7 +224,8 @@ C 1 0        # addi x0,  x27, 0        ; rs1 = x27 = 1
           <string>Data</string>
           <data>fec00213,7f020293,70128313,53130393,12337713,71c77793,5417f893
 ,13722913,292993,9aa13,ffda2a93,5aab13,b0013,fec22b93,b8013,fa65ac13
-,c0013,22c93,c8013,2585ad13,d0013,fff22d93,d8013</data>
+,c0013,22c93,c8013,2585ad13,d0013,fff22d93,d8013,a00093,1400113
+,ffb00193,208233,401102b3,30f333,20e3b3,11a433,1084b3,120493</data>
         </entry>
         <entry>
           <string>lastDataFile</string>
